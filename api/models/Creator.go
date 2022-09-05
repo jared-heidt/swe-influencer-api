@@ -60,7 +60,7 @@ func GetCreator(id uint32) (Creator, error) {
 	return creator, nil
 }
 
-func createCreator(creator Creator) error {
+func CreateCreator(creator Creator) error {
 	query := `INSERT INTO creator(name, profession, focus, youtube) VALUES ($1, $2, $3, $4)`
 	_, err := db.Exec(query, creator.Name, creator.Profession, creator.Focus, creator.Youtube)
 	if err != nil {
@@ -69,7 +69,7 @@ func createCreator(creator Creator) error {
 	return nil
 }
 
-func UpdatePost(creator Creator) error {
+func UpdateCreator(creator Creator) error {
 	query := `UPDATE creator SET name=$1, profession=$2, focus=$3, youtube=$4 WHERE id=$5;`
 	_, err := db.Exec(query, creator.Name, creator.Profession, creator.Focus, creator.Youtube, creator.ID)
 	if err != nil {
