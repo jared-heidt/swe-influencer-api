@@ -9,6 +9,7 @@ import (
 	"github.com/jared-heidt/swe-influencer-api/api/models"
 )
 
+// GET /api/creators
 func GetAllCreators(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
@@ -21,6 +22,7 @@ func GetAllCreators(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(creators)
 }
 
+// GET .api.creators/{id}
 func GetCreator(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
@@ -42,6 +44,7 @@ func GetCreator(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(creator)
 }
 
+// POST /api/creators
 func CreateCreator(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
@@ -65,6 +68,7 @@ func CreateCreator(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 }
 
+// PUT api/creators
 func UpdateCreator(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
@@ -87,6 +91,7 @@ func UpdateCreator(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusOK)
 }
 
+// DELETE api/creators/{id}
 func DeleteCreator(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
