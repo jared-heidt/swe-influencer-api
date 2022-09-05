@@ -12,6 +12,7 @@ import (
 
 var router *mux.Router
 
+// internal functions use lowercase first letter while external use capital
 func initHandlers() {
 	router.HandleFunc("/api/creators", GetAllCreators).Methods("GET")
 	router.HandleFunc("/api/creators/{id}", GetCreator).Methods("GET")
