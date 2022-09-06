@@ -33,5 +33,5 @@ func Start() {
 	}
 	port := os.Getenv("API_PORT")
 	fmt.Println("Router initialized and listening on ", port)
-	log.Fatal(http.ListenAndServe(port, router))
+	log.Fatal(http.ListenAndServe(":"+port, router))
 }

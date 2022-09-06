@@ -6,7 +6,7 @@ import (
 	"strconv"
 
 	"github.com/gorilla/mux"
-	"github.com/jared-heidt/swe-influencer-api/api/models"
+	"github.com/jared-heidt/swe-influencer-api/models"
 )
 
 // GET /api/creators

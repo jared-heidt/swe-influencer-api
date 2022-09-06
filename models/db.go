@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/joho/godotenv"
+	_ "github.com/lib/pq"
 )
 
 var db *sql.DB
@@ -39,7 +40,7 @@ func Init() {
 		DBName:   os.Getenv("DB_NAME"),
 	}
 
-	db, err = sql.Open(os.Getenv("DB_DRIVER"), connectionInfo.toString())
+	db, err = sql.Open("postgres", connectionInfo.toString())
 
 	if err != nil {
 		fmt.Println("Error connecting to database", err.Error())
