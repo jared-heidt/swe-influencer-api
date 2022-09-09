@@ -31,7 +31,7 @@ func Start() {
 		fmt.Println("Error loading .env file: ", err.Error())
 		return
 	}
-	port := os.Getenv("API_PORT")
+	port := os.Getenv("PORT")
 	fmt.Println("Router initialized and listening on", port)
 	log.Fatal(http.ListenAndServe(":"+port, router))
 }

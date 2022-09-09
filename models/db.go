@@ -33,11 +33,11 @@ func Init() {
 	}
 
 	connectionInfo := connection{
-		Host:     os.Getenv("DB_HOST"),
-		Port:     os.Getenv("DB_PORT"),
-		User:     os.Getenv("DB_USER"),
-		Password: os.Getenv("DB_PASSWORD"),
-		DBName:   os.Getenv("DB_NAME"),
+		Host:     os.Getenv("POSTGRES_HOST"),
+		Port:     os.Getenv("POSTGRES_PORT"),
+		User:     os.Getenv("POSTGRES_USER"),
+		Password: os.Getenv("POSTGRES_PASSWORD"),
+		DBName:   os.Getenv("POSTGRES_DB"),
 	}
 
 	db, err = sql.Open("postgres", connectionInfo.toString())
