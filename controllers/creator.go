@@ -22,7 +22,7 @@ func GetAllCreators(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(creators)
 }
 
-// GET .api.creators/{id}
+// GET /api/creators/{id}
 func GetCreator(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 
