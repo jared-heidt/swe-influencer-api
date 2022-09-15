@@ -8,9 +8,8 @@ services:
     ports:
       - 8080:8080
     restart: on-failure
-    environment:
-      PORT: 8080
-      DB_CONN: "postgres://admin:taco@content_creator:5432/content_creator?sslmode=disable"
+    env_file:
+      - .env
     volumes:
       - .:/app
     depends_on:
@@ -23,9 +22,5 @@ services:
     container_name: creator_db
     ports:
       - '5432:5432'
-    environment:
-      POSTGRES_USER: "admin"
-      POSTGRES_PASSWORD: "taco"
-      POSTGRES_DB: "content_creator"
-      TZ: 'UTC'
-      PGTZ: 'UTC'
+    env_file:
+      - .env

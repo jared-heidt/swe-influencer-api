@@ -25,7 +25,7 @@ func (c connection) toString() string {
 }
 
 func Init() {
-	err := godotenv.Load("config/db.env")
+	err := godotenv.Load(".env")
 
 	if err != nil {
 		fmt.Println("Error loading .env file: ", err.Error())

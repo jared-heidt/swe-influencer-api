@@ -25,7 +25,7 @@ func Start() {
 
 	initHandlers()
 
-	err := godotenv.Load("config/api.env")
+	err := godotenv.Load(".env")
 
 	if err != nil {
 		fmt.Println("Error loading .env file: ", err.Error())
